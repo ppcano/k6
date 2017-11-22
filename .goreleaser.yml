@@ -1,0 +1,13 @@
+build:
+  main: main.go
+  binary: k6
+  goos:
+    - darwin
+    - linux
+    - windows
+    - freebsd
+    - netbsd
+    - openbsd
+  goarch:
+    - amd64
+    - 386
