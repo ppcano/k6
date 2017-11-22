@@ -26,3 +26,10 @@ container:
 .PHONY: push
 push:
 	docker push loadimpact/k6:$(VERSION)
+
+# Release binaries to GitHub.
+release: build
+	@echo "==> Releasing"
+	@goreleaser -p 1 --rm-dist -config .goreleaser.yml
+	@echo "==> Complete"
+.PHONY: release
